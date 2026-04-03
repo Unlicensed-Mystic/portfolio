@@ -105,16 +105,14 @@
       text-decoration: none;
       font-family: 'DM Mono', monospace;
       font-size: 0.82rem;
+      font-weight: 600;
       letter-spacing: 0.08em;
       transition: color 0.3s;
       position: relative;
     }
 
     .nav-links a::before {
-      content: attr(data-num);
-      color: var(--accent);
-      font-size: 0.7rem;
-      margin-right: 0.4rem;
+      content: none;
     }
 
     .nav-links a:hover {
@@ -521,6 +519,52 @@
     #leetcode {
       background: var(--bg);
       border-top: 1px solid var(--border);
+    }
+
+    /* PSR (Problem / Solution / Result) labels */
+    .psr {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .psr p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .psr-label {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .psr-label.problem {
+      background: rgba(252, 108, 143, 0.12);
+      color: var(--accent2);
+      border: 1px solid rgba(252, 108, 143, 0.25);
+    }
+
+    .psr-label.solution {
+      background: rgba(124, 108, 252, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(124, 108, 252, 0.25);
+    }
+
+    .psr-label.result {
+      background: rgba(108, 252, 220, 0.1);
+      color: var(--accent3);
+      border: 1px solid rgba(108, 252, 220, 0.2);
     }
 
     .lc-layout {
@@ -1560,9 +1604,9 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-num="01">About</a></li>
       <li><a href="#skills" data-num="02">Skills</a></li>
-      <li><a href="#leetcode" data-num="03">LeetCode</a></li>
-      <li><a href="#projects" data-num="04">Projects</a></li>
-      <li><a href="#certificates" data-num="05">Certs</a></li>
+      <li><a href="#projects" data-num="03">Projects</a></li>
+      <li><a href="#leetcode" data-num="04">LeetCode</a></li>
+      <li><a href="#certificates" data-num="05">Certificates</a></li>
       <li><a href="#contact" data-num="06">Contact</a></li>
     </ul>
   </nav>
@@ -1736,6 +1780,96 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="reveal">
+      <p class="section-label">Things I've built</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">A selection of projects I've poured my heart into — ranging from full-stack apps to
+        polished front-end experiences.</p>
+    </div>
+    <div class="projects-grid reveal">
+      <div class="project-card">
+        <!-- PROJECT IMAGE: replace "images/project1.png" with your actual screenshot path -->
+        <div class="project-thumb p-thumb1">
+          <!-- <img src="images/project1.png" alt="FinTrack screenshot"> -->
+          <img src="images/project1.png" alt="FinTrack screenshot">
+        </div>
+        <div class="project-body">
+          <p class="project-num">Project 01</p>
+          <h3>FinTrack</h3>
+          <div class="psr">
+            <p><span class="psr-label problem">Problem</span> Managing personal finances is difficult without a clear visual overview — users lose track of income, spending patterns, and budget goals.</p>
+            <p><span class="psr-label solution">Solution</span> Built a React fintech dashboard with Firebase auth, allowing users to log transactions, categorize spending, and visualise their balance with live summary cards and charts.</p>
+            <p><span class="psr-label result">Result</span> A fully deployed, responsive finance tracker with Add/Edit/Delete transaction support, real-time balance updates, and a dark-mode UI that stands out from generic banking apps.</p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">MongoDB</span>
+            <span class="tech-badge">Stripe</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Unlicensed-Mystic/finance-tracker" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://financetracker-pied-nine.vercel.app/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <!-- PROJECT IMAGE: replace "images/project2.png" with your actual screenshot path -->
+        <div class="project-thumb p-thumb2">
+          <!-- <img src="images/project2.png" alt="Konvo screenshot"> -->
+          <img src="images/project2.png" alt="FinTrack screenshot">
+        </div>
+        <div class="project-body">
+          <p class="project-num">Project 02</p>
+          <h3>StudyWise</h3>
+          <div class="psr">
+            <p><span class="psr-label problem">Problem</span> Students struggle to organise multiple subjects, deadlines, and study schedules in one place, leading to missed tasks and poor time management.</p>
+            <p><span class="psr-label solution">Solution</span> Built a Smart Study Planner using HTML, CSS & Vanilla JS with LocalStorage persistence — featuring a dashboard, subject manager, weekly schedule planner, task tracker, and progress analytics.</p>
+            <p><span class="psr-label result">Result</span> A fully offline-capable planner that retains all data across page refreshes, with deadline alerts and progress charts helping students stay consistently on top of their workload.</p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Socket.io</span>
+            <span class="tech-badge">Express</span>
+            <span class="tech-badge">Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Unlicensed-Mystic/smart-study-planner" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://unlicensed-mystic.github.io/smart-study-planner/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <!-- PROJECT IMAGE: replace "images/project3.png" with your actual screenshot path -->
+        <div class="project-thumb p-thumb3">
+          <!-- <img src="images/project3.png" alt="Dev Dashboard screenshot"> -->
+          <img src="images/project3.png" alt="FinTrack screenshot">
+        </div>
+        <div class="project-body">
+          <p class="project-num">Project 03</p>
+          <h3>LeaveManage</h3>
+          <div class="psr">
+            <p><span class="psr-label problem">Problem</span> HR teams in companies lack a centralised system for handling leave requests, approvals, and role-based access — leading to manual errors and poor visibility.</p>
+            <p><span class="psr-label solution">Solution</span> Built a full-stack Leave Management System with React, Node.js, MongoDB & JWT — featuring role-based dashboards for Employees, Managers, and Admins, protected routes, and a leave approval workflow.</p>
+            <p><span class="psr-label result">Result</span> A production-grade HR platform with secure authentication, real-time leave status tracking (Pending / Approved / Rejected), and a Context API-driven global state — following industry folder structure and best practices.</p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">GitHub API</span>
+            <span class="tech-badge">Chart.js</span>
+            <span class="tech-badge">CSS3</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Unlicensed-Mystic/leaveManage" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://leave-manage-rho.vercel.app" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- LEETCODE STATS -->
   <section id="leetcode">
     <div class="reveal">
@@ -1819,84 +1953,7 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="reveal">
-      <p class="section-label">Things I've built</p>
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-desc">A selection of projects I've poured my heart into — ranging from full-stack apps to
-        polished front-end experiences.</p>
-    </div>
-    <div class="projects-grid reveal">
-      <div class="project-card">
-        <!-- PROJECT IMAGE: replace "images/project1.png" with your actual screenshot path -->
-        <div class="project-thumb p-thumb1">
-          <!-- <img src="images/project1.png" alt="FinTrack screenshot"> -->
-          <img src="images/project1.png" alt="FinTrack screenshot">
-        </div>
-        <div class="project-body">
-          <p class="project-num">Project 01</p>
-          <h3>FinTrack</h3>
-          <p>A frontend-only fintech dashboard using React where users can manage income and expenses using
-            Firebase for authentication and storage.</p>
-          <div class="project-tech">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">Node.js</span>
-            <span class="tech-badge">MongoDB</span>
-            <span class="tech-badge">Stripe</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Unlicensed-Mystic/finance-tracker" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://financetracker-pied-nine.vercel.app/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <!-- PROJECT IMAGE: replace "images/project2.png" with your actual screenshot path -->
-        <div class="project-thumb p-thumb2">
-          <!-- <img src="images/project2.png" alt="Konvo screenshot"> -->
-          <img src="images/project2.png" alt="FinTrack screenshot">
-        </div>
-        <div class="project-body">
-          <p class="project-num">Project 02</p>
-          <h3>StudyWise</h3>
-          <p>A sleek, interactive web application designed to help students organize their academic life. This tool allows users to manage subjects, track weekly study schedules, and monitor task deadlines with built-in progress analytics.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">Socket.io</span>
-            <span class="tech-badge">Express</span>
-            <span class="tech-badge">Firebase</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <!-- PROJECT IMAGE: replace "images/project3.png" with your actual screenshot path -->
-        <div class="project-thumb p-thumb3">
-          <!-- <img src="images/project3.png" alt="Dev Dashboard screenshot"> -->
-          <img src="images/project3.png" alt="FinTrack screenshot">
-        </div>
-        <div class="project-body">
-          <p class="project-num">Project 03</p>
-          <h3>LeaveManage</h3>
-          <p>A full-stack HR Leave & Reimbursement Management System with JWT authentication, role-based access control,
-            and a modern dark UI.</p>
-          <div class="project-tech">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">GitHub API</span>
-            <span class="tech-badge">Chart.js</span>
-            <span class="tech-badge">CSS3</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
+  </section>    </div>
         </div>
       </div>
     </div>
